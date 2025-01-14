@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "airflow-dag-helloworld"
+version = "0.1.0"
+description = ""
+authors = ["Javier Rodriguez <javier.rodriguez@gyrusds.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "<3.13,>=3.8.1"
+apache-airflow = "2.10.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
