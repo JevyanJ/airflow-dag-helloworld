@@ -4,7 +4,8 @@ import logging
 
 
 def helloWorld():
-    logging.info("Hello World")
+    logger = logging.getLogger(__name__)
+    logger.info("Hello World")
 
 
 with DAG(dag_id="test_dag",
