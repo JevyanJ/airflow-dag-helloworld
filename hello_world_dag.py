@@ -1,12 +1,13 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+import logging
 
 
 def helloWorld():
-    print("Hello World")
+    logging.info("Hello World")
 
 
-with DAG(dag_id="hello_world_dag",
+with DAG(dag_id="test_dag",
          schedule_interval=None,
          ) as dag:
 
