@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
 import logging
 
 
@@ -12,7 +12,9 @@ with DAG(dag_id="test_dag",
          schedule_interval=None,
          ) as dag:
 
-    task1 = PythonOperator(
+    task1 = KubernetesPodOperator(
+        name="hello_world_task",
+        image="python:3.7",
         task_id="hello_world",
         python_callable=helloWorld,
         dag=dag)
